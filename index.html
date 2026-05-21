@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fantastech — Solar Panel Sourcing Tracker</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
+  header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 28px 32px; border-bottom: 2px solid #e53e3e; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 14px; }
+  .logo-icon { font-size: 32px; }
+  h1 { font-size: 1.5rem; font-weight: 700; color: #fff; }
+  h1 span { color: #fc8181; font-size: 0.9rem; font-weight: 400; display: block; margin-top: 2px; }
+  .meta { text-align: right; font-size: 0.78rem; color: #718096; }
+  .meta strong { color: #a0aec0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 28px 20px; }
+  .summary-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 28px; }
+  .stat-card { background: #1a202c; border: 1px solid #2d3748; border-radius: 10px; padding: 16px 18px; }
+  .stat-card .num { font-size: 2rem; font-weight: 800; line-height: 1; }
+  .stat-card .label { font-size: 0.72rem; color: #718096; text-transform: uppercase; letter-spacing: .05em; margin-top: 4px; }
+  .stat-card.green .num { color: #68d391; }
+  .stat-card.yellow .num { color: #f6e05e; }
+  .stat-card.red .num { color: #fc8181; }
+  .stat-card.blue .num { color: #63b3ed; }
+  section { margin-bottom: 32px; }
+  section h2 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #718096; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2d3748; }
+  table { width: 100%; border-collapse: collapse; background: #1a202c; border-radius: 10px; overflow: hidden; border: 1px solid #2d3748; }
+  th { background: #2d3748; font-size: 0.72rem; text-transform: uppercase; letter-spacing: .06em; color: #a0aec0; padding: 11px 14px; text-align: left; font-weight: 600; }
+  td { padding: 13px 14px; font-size: 0.85rem; border-top: 1px solid #2d3748; vertical-align: top; }
+  tr:hover td { background: #252d3d; }
+  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.73rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
+  .badge.awaiting { background: #2d3748; color: #f6e05e; border: 1px solid #744210; }
+  .badge.quoted { background: #1c4532; color: #68d391; border: 1px solid #276749; }
+  .badge.requested { background: #1a365d; color: #63b3ed; border: 1px solid #2c5282; }
+  .badge.dead { background: #2d1a1a; color: #fc8181; border: 1px solid #742a2a; }
+  .badge.runaround { background: #322c1a; color: #f6ad55; border: 1px solid #744210; }
+  .price { font-weight: 700; color: #68d391; font-size: 0.9rem; }
+  .no-price { color: #4a5568; font-style: italic; }
+  .vendor-name { font-weight: 600; color: #e2e8f0; }
+  .company { font-size: 0.75rem; color: #718096; margin-top: 2px; }
+  .note { font-size: 0.78rem; color: #a0aec0; line-height: 1.4; }
+  .date { font-size: 0.75rem; color: #718096; white-space: nowrap; }
+  .target-box { background: #1a202c; border: 1px solid #2d3748; border-left: 4px solid #e53e3e; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: flex-start; gap: 14px; }
+  .target-box .icon { font-size: 1.6rem; flex-shrink: 0; }
+  .target-box h3 { font-size: 0.85rem; font-weight: 700; color: #fc8181; margin-bottom: 4px; }
+  .target-box p { font-size: 0.82rem; color: #a0aec0; line-height: 1.5; }
+  .target-box strong { color: #e2e8f0; }
+  .updated { font-size: 0.72rem; color: #4a5568; text-align: center; padding: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <div class="logo-icon">☀️</div>
+    <div>
+      <h1>Solar Panel Sourcing Tracker <span>Fantastech Energy Solution LLC</span></h1>
+    </div>
+  </div>
+  <div class="meta">
+    <strong>Target Order</strong><br>
+    1 × 40' HC Container<br>
+    ~560 panels · Tier 1 N-Type Bifacial 580–625W<br>
+    DDP Goshen, IN 46528
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="target-box">
+    <div class="icon">📦</div>
+    <div>
+      <h3>Active RFQ — 1 Full Container (40' HC)</h3>
+      <p><strong>Product:</strong> Tier 1 N-Type Bifacial Solar Panels, 580–625W · <strong>Qty:</strong> ~560 panels (16 pallets) · <strong>Shipping:</strong> Sea freight DDP to Goshen, IN 46528, USA · <strong>Payment:</strong> TT or Trade Assurance</p>
+    </div>
+  </div>
+
+  <div class="summary-bar">
+    <div class="stat-card yellow"><div class="num">2</div><div class="label">Awaiting Quote</div></div>
+    <div class="stat-card blue"><div class="num">3</div><div class="label">Quote Requested</div></div>
+    <div class="stat-card green"><div class="num">1</div><div class="label">Price Received</div></div>
+    <div class="stat-card red"><div class="num">2</div><div class="label">Dead Ends</div></div>
+  </div>
+
+  <section>
+    <h2>🟡 Price Received / Awaiting Full DDP Quote</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Vendor</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Last Contact</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="vendor-name">Victoria Hu</div><div class="company">Greensun Solar Energy Tech Co.</div></td>
+          <td>Jinko 620W N-Type Bifacial<br><span style="font-size:0.75rem;color:#718096">JKM600-625N-66HL4M-BDV-F1</span></td>
+          <td><div class="price">$79.30/pc</div><span style="font-size:0.75rem;color:#718096">panel cost only · sea freight required</span></td>
+          <td><span class="badge awaiting">⏳ Awaiting DDP Container Quote</span></td>
+          <td class="date">2026-05-21</td>
+          <td class="note">Quoted $79.30/pc for Jinko 620W. Sea freight only (3.5 CBM/pallet). CLA asked for full 40' HC DDP price. Also has own lithium battery factory.</td>
+        </tr>
+        <tr>
+          <td><div class="vendor-name">Felix Wong</div><div class="company">Huafeng Solar Co., Ltd.</div></td>
+          <td>Jinko 590W N-Type Bifacial<br><span style="font-size:0.75rem;color:#718096">CA local warehouse stock</span></td>
+          <td><div class="price">$5,100/pallet DDP</div><span style="font-size:0.75rem;color:#718096">36 pcs · ~$141.67/panel all-in</span></td>
+          <td><span class="badge quoted">✅ Quoted (small qty)</span></td>
+          <td class="date">2026-05-20</td>
+          <td class="note">Local CA stock, not China container. Good for small/urgent orders. $141/panel DDP is expensive vs container pricing. Could request a container sea freight quote.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>🔵 Container Quote Requested — Awaiting Response</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Vendor</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Last Contact</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="vendor-name">Vicky Xu</div><div class="company">Soom Solar System Co., Ltd.</div></td>
+          <td>Jinko 620–630W N-Type Bifacial<br><span style="font-size:0.75rem;color:#718096">or Znshine 595W from LA warehouse</span></td>
+          <td><div class="no-price">No Jinko container quote yet</div><span style="font-size:0.75rem;color:#718096">Znshine 595W EXW $0.225/W (LA) offered</span></td>
+          <td><span class="badge requested">📨 Container Quote Requested</span></td>
+          <td class="date">2026-05-21</td>
+          <td class="note">Original May 4 FCL inquiry. Offered Znshine EXW from LA as alt. CLA re-asked for Jinko 40' HC DDP on 5/21. Waiting.</td>
+        </tr>
+        <tr>
+          <td><div class="vendor-name">Abby Peng</div><div class="company">Dongguan Slocable Photovoltaic Tech</div></td>
+          <td>Tier 1 N-Type Bifacial 580–625W</td>
+          <td><div class="no-price">No quote received</div></td>
+          <td><span class="badge requested">📨 Container Quote Requested</span></td>
+          <td class="date">2026-05-21</td>
+          <td class="note">Warm-held since May 11 with vague check-ins. CLA sent direct container RFQ 5/21. Long overdue for pricing.</td>
+        </tr>
+        <tr>
+          <td><div class="vendor-name">Annie Zhang</div><div class="company">Henan Livefun Solar Tech Co., Ltd.</div></td>
+          <td>Tier 1 N-Type Bifacial 580–625W</td>
+          <td><div class="no-price">No quote received</div></td>
+          <td><span class="badge requested">📨 Container Quote Requested</span></td>
+          <td class="date">2026-05-21</td>
+          <td class="note">Weeks of warm social exchanges, zero pricing. CLA sent direct container RFQ 5/21. First actual ask for numbers.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>🔴 Dead Ends</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Vendor</th>
+          <th>Reason</th>
+          <th>Last Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="vendor-name">Mia Mei</div><div class="company">Nanjing Moge New Energy Co., Ltd.</div></td>
+          <td><span class="badge dead">❌ Cannot export to US</span><br><span class="note" style="margin-top:6px;display:block">Explicitly stated: tariffs (AD/CVD, 201, 301) prevent solar panel exports to USA. Now sells only Staubli MC4 connectors/tools to US.</span></td>
+          <td class="date">2026-05-20</td>
+        </tr>
+        <tr>
+          <td><div class="vendor-name">Emily (Ewen)</div><div class="company">Bluesun Solar Co., Ltd.</div></td>
+          <td><span class="badge runaround">🔄 Runaround</span><br><span class="note" style="margin-top:6px;display:block">Repeatedly says "your email is already registered by another colleague." No pricing ever received despite multiple follow-ups since May 4.</span></td>
+          <td class="date">2026-05-20</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <p class="updated">Last updated: 2026-05-21 · Maintained by CLA (Fantastech purchasing agent) · Target: 1 × 40' HC container, ~560 panels, DDP Goshen IN</p>
+</div>
+</body>
+</html>
