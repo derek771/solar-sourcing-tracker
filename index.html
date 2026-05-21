@@ -3,190 +3,324 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPCEtLSBkYXJrIGJhY2tncm91bmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBmMTExNyIvPgogIDwhLS0gNCBwYW5lbCBjZWxscyBpbiBhIDJ4MiBncmlkLCBib3R0b20gaGFsZiAtLT4KICA8cmVjdCB4PSIzIiB5PSIxNiIgd2lkdGg9IjExIiBoZWlnaHQ9IjEzIiByeD0iMiIgZmlsbD0iIzJiNmNiMCIvPgogIDxyZWN0IHg9IjE4IiB5PSIxNiIgd2lkdGg9IjExIiBoZWlnaHQ9IjEzIiByeD0iMiIgZmlsbD0iIzJiNmNiMCIvPgogIDwhLS0gcGFuZWwgY2VsbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMyIgeTE9IjIyLjUiIHgyPSIxNCIgeTI9IjIyLjUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KICA8bGluZSB4MT0iMTgiIHkxPSIyMi41IiB4Mj0iMjkiIHkyPSIyMi41IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMC44Ii8+CiAgPGxpbmUgeDE9IjguNSIgeTE9IjE2IiB4Mj0iOC41IiB5Mj0iMjkiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KICA8bGluZSB4MT0iMjMuNSIgeTE9IjE2IiB4Mj0iMjMuNSIgeTI9IjI5IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMC44Ii8+CiAgPCEtLSBzdW4gdG9wIGhhbGYgLS0+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxMCIgcj0iNSIgZmlsbD0iI2Y2ZTA1ZSIvPgogIDwhLS0gc3VuIHJheXMgLS0+CiAgPGxpbmUgeDE9IjE2IiB5MT0iMiIgeDI9IjE2IiB5Mj0iNCIgc3Ryb2tlPSIjZjZlMDVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjIyLjIiIHkxPSIzLjgiIHgyPSIyMSIgeTI9IjUuMCIgc3Ryb2tlPSIjZjZlMDVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjI0LjIiIHkxPSIxMCIgeDI9IjIyLjIiIHkyPSIxMCIgc3Ryb2tlPSIjZjZlMDVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjkuOCIgeTE9IjMuOCIgeDI9IjExLjAiIHkyPSI1LjAiIHN0cm9rZT0iI2Y2ZTA1ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSI3LjgiIHkxPSIxMCIgeDI9IjkuOCIgeTI9IjEwIiBzdHJva2U9IiNmNmUwNWUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+">
-<link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPCEtLSBkYXJrIGJhY2tncm91bmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBmMTExNyIvPgogIDwhLS0gNCBwYW5lbCBjZWxscyBpbiBhIDJ4MiBncmlkLCBib3R0b20gaGFsZiAtLT4KICA8cmVjdCB4PSIzIiB5PSIxNiIgd2lkdGg9IjExIiBoZWlnaHQ9IjEzIiByeD0iMiIgZmlsbD0iIzJiNmNiMCIvPgogIDxyZWN0IHg9IjE4IiB5PSIxNiIgd2lkdGg9IjExIiBoZWlnaHQ9IjEzIiByeD0iMiIgZmlsbD0iIzJiNmNiMCIvPgogIDwhLS0gcGFuZWwgY2VsbCBsaW5lcyAtLT4KICA8bGluZSB4MT0iMyIgeTE9IjIyLjUiIHgyPSIxNCIgeTI9IjIyLjUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KICA8bGluZSB4MT0iMTgiIHkxPSIyMi41IiB4Mj0iMjkiIHkyPSIyMi41IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMC44Ii8+CiAgPGxpbmUgeDE9IjguNSIgeTE9IjE2IiB4Mj0iOC41IiB5Mj0iMjkiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KICA8bGluZSB4MT0iMjMuNSIgeTE9IjE2IiB4Mj0iMjMuNSIgeTI9IjI5IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMC44Ii8+CiAgPCEtLSBzdW4gdG9wIGhhbGYgLS0+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxMCIgcj0iNSIgZmlsbD0iI2Y2ZTA1ZSIvPgogIDwhLS0gc3VuIHJheXMgLS0+CiAgPGxpbmUgeDE9IjE2IiB5MT0iMiIgeDI9IjE2IiB5Mj0iNCIgc3Ryb2tlPSIjZjZlMDVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjIyLjIiIHkxPSIzLjgiIHgyPSIyMSIgeTI9IjUuMCIgc3Ryb2tlPSIjZjZlMDVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjI0LjIiIHkxPSIxMCIgeDI9IjIyLjIiIHkyPSIxMCIgc3Ryb2tlPSIjZjZlMDVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGxpbmUgeDE9IjkuOCIgeTE9IjMuOCIgeDI9IjExLjAiIHkyPSI1LjAiIHN0cm9rZT0iI2Y2ZTA1ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDxsaW5lIHgxPSI3LjgiIHkxPSIxMCIgeDI9IjkuOCIgeTI9IjEwIiBzdHJva2U9IiNmNmUwNWUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+">
+<title>Fantastech — Sourcing Tracker</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBmMTExNyIvPjxyZWN0IHg9IjMiIHk9IjE2IiB3aWR0aD0iMTEiIGhlaWdodD0iMTMiIHJ4PSIyIiBmaWxsPSIjMmI2Y2IwIi8+PHJlY3QgeD0iMTgiIHk9IjE2IiB3aWR0aD0iMTEiIGhlaWdodD0iMTMiIHJ4PSIyIiBmaWxsPSIjMmI2Y2IwIi8+PGxpbmUgeDE9IjMiIHkxPSIyMi41IiB4Mj0iMTQiIHkyPSIyMi41IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMC44Ii8+PGxpbmUgeDE9IjE4IiB5MT0iMjIuNSIgeDI9IjI5IiB5Mj0iMjIuNSIgc3Ryb2tlPSIjNjNiM2VkIiBzdHJva2Utd2lkdGg9IjAuOCIvPjxsaW5lIHgxPSI4LjUiIHkxPSIxNiIgeDI9IjguNSIgeTI9IjI5IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMC44Ii8+PGxpbmUgeDE9IjIzLjUiIHkxPSIxNiIgeDI9IjIzLjUiIHkyPSIyOSIgc3Ryb2tlPSIjNjNiM2VkIiBzdHJva2Utd2lkdGg9IjAuOCIvPjxjaXJjbGUgY3g9IjE2IiBjeT0iMTAiIHI9IjUiIGZpbGw9IiNmNmUwNWUiLz48bGluZSB4MT0iMTYiIHkxPSIyIiB4Mj0iMTYiIHkyPSI0IiBzdHJva2U9IiNmNmUwNWUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iMjIuMiIgeTE9IjMuOCIgeDI9IjIxIiB5Mj0iNS4wIiBzdHJva2U9IiNmNmUwNWUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iMjQuMiIgeTE9IjEwIiB4Mj0iMjIuMiIgeTI9IjEwIiBzdHJva2U9IiNmNmUwNWUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48bGluZSB4MT0iOS44IiB5MT0iMy44IiB4Mj0iMTEuMCIgeTI9IjUuMCIgc3Ryb2tlPSIjZjZlMDVlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGxpbmUgeDE9IjcuOCIgeTE9IjEwIiB4Mj0iOS44IiB5Mj0iMTAiIHN0cm9rZT0iI2Y2ZTA1ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==">
 <meta name="theme-color" content="#0f1117">
-<title>Fantastech — Solar Panel Sourcing Tracker</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
-  header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 28px 32px; border-bottom: 2px solid #e53e3e; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .logo { display: flex; align-items: center; gap: 14px; }
-  .logo-icon { font-size: 32px; }
-  h1 { font-size: 1.5rem; font-weight: 700; color: #fff; }
-  h1 span { color: #fc8181; font-size: 0.9rem; font-weight: 400; display: block; margin-top: 2px; }
-  .meta { text-align: right; font-size: 0.78rem; color: #718096; }
-  .meta strong { color: #a0aec0; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 28px 20px; }
-  .summary-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 28px; }
-  .stat-card { background: #1a202c; border: 1px solid #2d3748; border-radius: 10px; padding: 16px 18px; }
-  .stat-card .num { font-size: 2rem; font-weight: 800; line-height: 1; }
-  .stat-card .label { font-size: 0.72rem; color: #718096; text-transform: uppercase; letter-spacing: .05em; margin-top: 4px; }
-  .stat-card.green .num { color: #68d391; }
-  .stat-card.yellow .num { color: #f6e05e; }
-  .stat-card.red .num { color: #fc8181; }
-  .stat-card.blue .num { color: #63b3ed; }
-  section { margin-bottom: 32px; }
-  section h2 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #718096; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2d3748; }
-  table { width: 100%; border-collapse: collapse; background: #1a202c; border-radius: 10px; overflow: hidden; border: 1px solid #2d3748; }
-  th { background: #2d3748; font-size: 0.72rem; text-transform: uppercase; letter-spacing: .06em; color: #a0aec0; padding: 11px 14px; text-align: left; font-weight: 600; }
-  td { padding: 13px 14px; font-size: 0.85rem; border-top: 1px solid #2d3748; vertical-align: top; }
-  tr:hover td { background: #252d3d; }
-  .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.73rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; white-space: nowrap; }
-  .badge.awaiting { background: #2d3748; color: #f6e05e; border: 1px solid #744210; }
-  .badge.quoted { background: #1c4532; color: #68d391; border: 1px solid #276749; }
-  .badge.requested { background: #1a365d; color: #63b3ed; border: 1px solid #2c5282; }
-  .badge.dead { background: #2d1a1a; color: #fc8181; border: 1px solid #742a2a; }
-  .badge.runaround { background: #322c1a; color: #f6ad55; border: 1px solid #744210; }
-  .price { font-weight: 700; color: #68d391; font-size: 0.9rem; }
-  .no-price { color: #4a5568; font-style: italic; }
-  .vendor-name { font-weight: 600; color: #e2e8f0; }
-  .company { font-size: 0.75rem; color: #718096; margin-top: 2px; }
-  .note { font-size: 0.78rem; color: #a0aec0; line-height: 1.4; }
-  .date { font-size: 0.75rem; color: #718096; white-space: nowrap; }
-  .target-box { background: #1a202c; border: 1px solid #2d3748; border-left: 4px solid #e53e3e; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: flex-start; gap: 14px; }
-  .target-box .icon { font-size: 1.6rem; flex-shrink: 0; }
-  .target-box h3 { font-size: 0.85rem; font-weight: 700; color: #fc8181; margin-bottom: 4px; }
-  .target-box p { font-size: 0.82rem; color: #a0aec0; line-height: 1.5; }
-  .target-box strong { color: #e2e8f0; }
-  .updated { font-size: 0.72rem; color: #4a5568; text-align: center; padding: 20px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e2e8f0; min-height: 100vh; }
+header { background: #16213e; padding: 22px 32px; border-bottom: 2px solid #e53e3e; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.logo { display: flex; align-items: center; gap: 12px; }
+h1 { font-size: 1.3rem; font-weight: 700; color: #fff; }
+h1 span { color: #fc8181; font-size: 0.8rem; font-weight: 400; display: block; margin-top: 2px; }
+.meta { font-size: 0.75rem; color: #718096; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }
+
+/* Category tabs */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; }
+.tab { padding: 8px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; cursor: pointer; border: 1px solid #2d3748; background: #1a202c; color: #718096; transition: all .15s; }
+.tab:hover { color: #e2e8f0; border-color: #4a5568; }
+.tab.active { background: #2d3748; color: #fff; border-color: #4a5568; }
+.tab .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; }
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* Summary bar */
+.summary-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 22px; }
+.stat-card { background: #1a202c; border: 1px solid #2d3748; border-radius: 8px; padding: 14px 16px; }
+.stat-card .num { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.stat-card .label { font-size: 0.7rem; color: #718096; text-transform: uppercase; letter-spacing: .05em; margin-top: 4px; }
+.stat-card.green .num { color: #68d391; }
+.stat-card.yellow .num { color: #f6e05e; }
+.stat-card.red .num { color: #fc8181; }
+.stat-card.blue .num { color: #63b3ed; }
+.stat-card.orange .num { color: #f6ad55; }
+
+/* Target box */
+.target-box { background: #1a202c; border: 1px solid #2d3748; border-left: 3px solid #e53e3e; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; font-size: 0.82rem; color: #a0aec0; line-height: 1.6; }
+.target-box strong { color: #e2e8f0; }
+
+/* Sections */
+section { margin-bottom: 28px; }
+section h2 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #718096; margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px solid #2d3748; }
+table { width: 100%; border-collapse: collapse; background: #1a202c; border-radius: 8px; overflow: hidden; border: 1px solid #2d3748; margin-bottom: 4px; }
+th { background: #2d3748; font-size: 0.7rem; text-transform: uppercase; letter-spacing: .06em; color: #a0aec0; padding: 10px 13px; text-align: left; font-weight: 600; }
+td { padding: 12px 13px; font-size: 0.83rem; border-top: 1px solid #2d3748; vertical-align: top; }
+tr:hover td { background: #252d3d; }
+
+/* Badges */
+.badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
+.badge.awaiting { background: #2d3748; color: #f6e05e; border: 1px solid #744210; }
+.badge.finalist { background: #1c4532; color: #68d391; border: 1px solid #276749; }
+.badge.active { background: #1c4532; color: #68d391; border: 1px solid #276749; }
+.badge.quoted { background: #1c4532; color: #68d391; border: 1px solid #276749; }
+.badge.requested { background: #1a365d; color: #63b3ed; border: 1px solid #2c5282; }
+.badge.holding { background: #2d2d4a; color: #9f7aea; border: 1px solid #553c9a; }
+.badge.readonly { background: #2d2d2d; color: #a0aec0; border: 1px solid #4a5568; }
+.badge.dead { background: #2d1a1a; color: #fc8181; border: 1px solid #742a2a; }
+.badge.inbound { background: #1a2d2d; color: #4fd1c5; border: 1px solid #285e61; }
+.badge.decision { background: #3d2c1a; color: #f6ad55; border: 1px solid #744210; }
+
+.price { font-weight: 700; color: #68d391; }
+.no-price { color: #4a5568; font-style: italic; }
+.vendor-name { font-weight: 600; color: #e2e8f0; }
+.company { font-size: 0.72rem; color: #718096; margin-top: 2px; }
+.note { font-size: 0.76rem; color: #a0aec0; line-height: 1.45; }
+.date { font-size: 0.72rem; color: #718096; white-space: nowrap; }
+.updated { font-size: 0.7rem; color: #4a5568; text-align: center; padding: 18px; }
+.alert { background: #2d1f0a; border: 1px solid #744210; border-radius: 6px; padding: 10px 14px; font-size: 0.78rem; color: #f6ad55; margin-bottom: 16px; }
 </style>
 </head>
 <body>
 <header>
   <div class="logo">
-    <div class="logo-icon">☀️</div>
+    <div style="font-size:28px">🏭</div>
     <div>
-      <h1>Solar Panel Sourcing Tracker <span>Fantastech Energy Solution LLC</span></h1>
+      <h1>Fantastech Sourcing Tracker <span>Active purchasing campaigns — Fantastech Energy Solution LLC</span></h1>
     </div>
   </div>
-  <div class="meta">
-    <strong>Target Order</strong><br>
-    1 × 40' HC Container<br>
-    ~560 panels · Tier 1 N-Type Bifacial 580–625W<br>
-    DDP Goshen, IN 46528
-  </div>
+  <div class="meta">Updated: 2026-05-21 · Managed by CLA</div>
 </header>
 
 <div class="container">
 
-  <div class="target-box">
-    <div class="icon">📦</div>
-    <div>
-      <h3>Active RFQ — 1 Full Container (40' HC)</h3>
-      <p><strong>Product:</strong> Tier 1 N-Type Bifacial Solar Panels, 580–625W · <strong>Qty:</strong> ~560 panels (16 pallets) · <strong>Shipping:</strong> Sea freight DDP to Goshen, IN 46528, USA · <strong>Payment:</strong> TT or Trade Assurance</p>
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('panels')"><span class="dot" style="background:#f6e05e"></span>☀️ Solar Panels</div>
+    <div class="tab" onclick="showTab('batteries')"><span class="dot" style="background:#68d391"></span>🔋 Koor Batteries</div>
+    <div class="tab" onclick="showTab('inverters')"><span class="dot" style="background:#63b3ed"></span>⚡ Inverters</div>
+    <div class="tab" onclick="showTab('turkeyrun')"><span class="dot" style="background:#f6ad55"></span>🏗️ Turkey Run</div>
+  </div>
+
+  <!-- ═══════════════ SOLAR PANELS ═══════════════ -->
+  <div id="panels" class="panel active">
+    <div class="target-box"><strong>Target:</strong> 1 × 40' HC container · ~560 panels · Tier 1 N-Type Bifacial 580–625W · DDP Goshen, IN 46528 · Sea freight</div>
+    <div class="summary-bar">
+      <div class="stat-card yellow"><div class="num">1</div><div class="label">Price received</div></div>
+      <div class="stat-card blue"><div class="num">4</div><div class="label">Quote requested</div></div>
+      <div class="stat-card red"><div class="num">2</div><div class="label">Dead ends</div></div>
     </div>
+    <section>
+      <h2>🟡 Price received / awaiting full DDP</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Product</th><th>Price</th><th>Status</th><th>Last Contact</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Victoria Hu</div><div class="company">Greensun Solar Energy Tech</div></td>
+            <td>Jinko 620W N-Type Bifacial</td>
+            <td><div class="price">$79.30/pc</div><span class="note">panel only — no freight yet</span></td>
+            <td><span class="badge awaiting">⏳ Awaiting DDP container quote</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Sea freight only (3.5 CBM/pallet). CLA asked for full 40' HC DDP price.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Felix Wong</div><div class="company">Huafeng Solar Co., Ltd.</div></td>
+            <td>Jinko 590W N-Type Bifacial<br><span class="note">CA local warehouse stock</span></td>
+            <td><div class="price">$5,100/pallet DDP</div><span class="note">36 pcs · ~$141/panel all-in</span></td>
+            <td><span class="badge quoted">✅ Quoted (small qty only)</span></td>
+            <td class="date">2026-05-20</td>
+            <td class="note">US local stock — good for urgent small orders. Not a container quote.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>🔵 Container quote requested — awaiting response</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Product</th><th>Status</th><th>Last Contact</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Vicky Xu</div><div class="company">Soom Solar System Co., Ltd.</div></td>
+            <td>Jinko 620–630W N-Type Bifacial</td>
+            <td><span class="badge requested">📨 Container quote requested</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Also offered Znshine 595W EXW $0.225/W from LA as alt. Waiting on Jinko container DDP.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Abby Peng</div><div class="company">Dongguan Slocable Photovoltaic</div></td>
+            <td>Tier 1 N-Type Bifacial 580–625W</td>
+            <td><span class="badge requested">📨 Container quote requested</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Warm-held since May 11. First actual pricing ask sent 5/21.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Annie Zhang</div><div class="company">Henan Livefun Solar Tech</div></td>
+            <td>Tier 1 N-Type Bifacial 580–625W</td>
+            <td><span class="badge requested">📨 Container quote requested</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Weeks of social warm-hold. First actual RFQ sent 5/21.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>🔴 Dead ends</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Reason</th><th>Last Contact</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Mia Mei</div><div class="company">Nanjing Moge New Energy</div></td>
+            <td><span class="badge dead">❌ Cannot export to US</span><br><span class="note" style="margin-top:5px;display:block">AD/CVD + 201/301 tariffs — explicitly stated they cannot sell panels to USA.</span></td>
+            <td class="date">2026-05-20</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Emily (Ewen)</div><div class="company">Bluesun Solar Co., Ltd.</div></td>
+            <td><span class="badge dead">❌ Endless runaround</span><br><span class="note" style="margin-top:5px;display:block">"Your email is registered by another colleague" — no pricing ever received since May 4.</span></td>
+            <td class="date">2026-05-20</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
 
-  <div class="summary-bar">
-    <div class="stat-card yellow"><div class="num">2</div><div class="label">Awaiting Quote</div></div>
-    <div class="stat-card blue"><div class="num">3</div><div class="label">Quote Requested</div></div>
-    <div class="stat-card green"><div class="num">1</div><div class="label">Price Received</div></div>
-    <div class="stat-card red"><div class="num">2</div><div class="label">Dead Ends</div></div>
+  <!-- ═══════════════ KOOR BATTERIES ═══════════════ -->
+  <div id="batteries" class="panel">
+    <div class="target-box"><strong>Target:</strong> Koor Battery OEM — 16kWh LiFePO4 units · BMS Seplos 3.0 or equiv · UN38.3 cert required · DDP USA</div>
+    <div class="summary-bar">
+      <div class="stat-card green"><div class="num">2</div><div class="label">Finalists</div></div>
+      <div class="stat-card orange"><div class="num">1</div><div class="label">Orders inbound</div></div>
+      <div class="stat-card blue"><div class="num">4</div><div class="label">Holding</div></div>
+      <div class="stat-card red"><div class="num">1</div><div class="label">Banned</div></div>
+    </div>
+    <section>
+      <h2>✅ Finalists — Active</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Price / Terms</th><th>Status</th><th>Last Contact</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Denny / Ampleness</div><div class="company">Ampleness Technology</div></td>
+            <td><div class="price">Order 1: ~$45,215</div><div class="price">Order 2: 25 units 16kWh</div></td>
+            <td><span class="badge inbound">📦 Orders inbound</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Order 1 arriving ~May 25. Order 2 at US seaport May 28. $52K balance outstanding. WhatsApp primary channel.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Chad / Sunpal</div><div class="company">Sunpal Power Co., Ltd.</div></td>
+            <td><div class="price">PI: $135,470 total</div><span class="note">$96,239 remaining</span></td>
+            <td><span class="badge readonly">🔒 READ-ONLY — Derek manages</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">⚠️ DEREK DIRECTIVE: NEVER reply to Chad. Report new messages only. PI signed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>🟣 Holding — Docs received, no price</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Docs</th><th>Status</th><th>Last Contact</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Hart Zhong</div><div class="company">Shenzhen Seplos Technology</div></td>
+            <td>UN38.3 ✅ · BMS inverter list ✅</td>
+            <td><span class="badge holding">🟣 Holding — no price quoted</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Thread very warm. Do NOT over-communicate (Hart's standing request). Seplos 3.0 BMS, own lab-tested compatibility.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Tracy L</div><div class="company">Shenzhen Cyclen Technology</div></td>
+            <td>UN38.3 pending · BMS CAN doc pending</td>
+            <td><span class="badge holding">🟣 Holding — docs pending</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Last msg 03:42 "Ok." Still waiting on UN38.3 + BMS CAN compatibility docs.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Kate / Starmax</div><div class="company">Starmax</div></td>
+            <td>—</td>
+            <td><span class="badge holding">🟣 Holding</span></td>
+            <td class="date">2026-05-18</td>
+            <td class="note">Last msg "OK🌹" 5/18. Not finalist.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Jack Basen</div><div class="company">Shenzhen Basen Technology</div></td>
+            <td>TUV cert ✅</td>
+            <td><span class="badge holding">🟣 Not finalist</span></td>
+            <td class="date">2026-05-20</td>
+            <td class="note">JKV19 16kWh · $1,140–$1,200 EXW · EVE or CORNEX cells. Warm relationship.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>🔴 Out of contention</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Daisy / Docan</div><div class="company">Quanzhou Le City Outdoor Equipment</div></td>
+            <td><span class="badge dead">❌ Alibaba account BANNED</span><span class="note" style="margin-left:8px">accountId 226398870 — platform violation.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
 
-  <section>
-    <h2>🟡 Price Received / Awaiting Full DDP Quote</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Vendor</th>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Status</th>
-          <th>Last Contact</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><div class="vendor-name">Victoria Hu</div><div class="company">Greensun Solar Energy Tech Co.</div></td>
-          <td>Jinko 620W N-Type Bifacial<br><span style="font-size:0.75rem;color:#718096">JKM600-625N-66HL4M-BDV-F1</span></td>
-          <td><div class="price">$79.30/pc</div><span style="font-size:0.75rem;color:#718096">panel cost only · sea freight required</span></td>
-          <td><span class="badge awaiting">⏳ Awaiting DDP Container Quote</span></td>
-          <td class="date">2026-05-21</td>
-          <td class="note">Quoted $79.30/pc for Jinko 620W. Sea freight only (3.5 CBM/pallet). CLA asked for full 40' HC DDP price. Also has own lithium battery factory.</td>
-        </tr>
-        <tr>
-          <td><div class="vendor-name">Felix Wong</div><div class="company">Huafeng Solar Co., Ltd.</div></td>
-          <td>Jinko 590W N-Type Bifacial<br><span style="font-size:0.75rem;color:#718096">CA local warehouse stock</span></td>
-          <td><div class="price">$5,100/pallet DDP</div><span style="font-size:0.75rem;color:#718096">36 pcs · ~$141.67/panel all-in</span></td>
-          <td><span class="badge quoted">✅ Quoted (small qty)</span></td>
-          <td class="date">2026-05-20</td>
-          <td class="note">Local CA stock, not China container. Good for small/urgent orders. $141/panel DDP is expensive vs container pricing. Could request a container sea freight quote.</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- ═══════════════ INVERTERS ═══════════════ -->
+  <div id="inverters" class="panel">
+    <div class="target-box"><strong>Target:</strong> Growatt SPF 3000TL LVM-48P · Quantity and pricing TBD · Comparing $400 quoted vs $280 target</div>
+    <div class="summary-bar">
+      <div class="stat-card yellow"><div class="num">1</div><div class="label">Active vendor</div></div>
+      <div class="stat-card orange"><div class="num">1</div><div class="label">Decision pending</div></div>
+    </div>
+    <section>
+      <h2>⚡ Growatt SPF 3000TL LVM-48P</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Price quoted</th><th>Status</th><th>Last Contact</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Penny Pink</div><div class="company">Alibaba supplier</div></td>
+            <td><div class="price">$400/unit quoted</div><span class="note">Target: ~$280/unit</span></td>
+            <td><span class="badge decision">⚠️ Derek decision needed</span></td>
+            <td class="date">2026-05-18</td>
+            <td class="note">$400 quoted vs ~$280 target — significant gap. Derek needs to decide: negotiate, accept, or walk. Thread at 2026-5-18 auto-translate prompt (not a new msg).</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
 
-  <section>
-    <h2>🔵 Container Quote Requested — Awaiting Response</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Vendor</th>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Status</th>
-          <th>Last Contact</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><div class="vendor-name">Vicky Xu</div><div class="company">Soom Solar System Co., Ltd.</div></td>
-          <td>Jinko 620–630W N-Type Bifacial<br><span style="font-size:0.75rem;color:#718096">or Znshine 595W from LA warehouse</span></td>
-          <td><div class="no-price">No Jinko container quote yet</div><span style="font-size:0.75rem;color:#718096">Znshine 595W EXW $0.225/W (LA) offered</span></td>
-          <td><span class="badge requested">📨 Container Quote Requested</span></td>
-          <td class="date">2026-05-21</td>
-          <td class="note">Original May 4 FCL inquiry. Offered Znshine EXW from LA as alt. CLA re-asked for Jinko 40' HC DDP on 5/21. Waiting.</td>
-        </tr>
-        <tr>
-          <td><div class="vendor-name">Abby Peng</div><div class="company">Dongguan Slocable Photovoltaic Tech</div></td>
-          <td>Tier 1 N-Type Bifacial 580–625W</td>
-          <td><div class="no-price">No quote received</div></td>
-          <td><span class="badge requested">📨 Container Quote Requested</span></td>
-          <td class="date">2026-05-21</td>
-          <td class="note">Warm-held since May 11 with vague check-ins. CLA sent direct container RFQ 5/21. Long overdue for pricing.</td>
-        </tr>
-        <tr>
-          <td><div class="vendor-name">Annie Zhang</div><div class="company">Henan Livefun Solar Tech Co., Ltd.</div></td>
-          <td>Tier 1 N-Type Bifacial 580–625W</td>
-          <td><div class="no-price">No quote received</div></td>
-          <td><span class="badge requested">📨 Container Quote Requested</span></td>
-          <td class="date">2026-05-21</td>
-          <td class="note">Weeks of warm social exchanges, zero pricing. CLA sent direct container RFQ 5/21. First actual ask for numbers.</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- ═══════════════ TURKEY RUN ═══════════════ -->
+  <div id="turkeyrun" class="panel">
+    <div class="target-box"><strong>Project:</strong> Turkey Run — 150kW Off-Grid Solar System · Major installation project · Multiple equipment categories</div>
+    <div class="alert">⚠️ STANDING RULE: Chad @ Sunpal is READ-ONLY on ALL threads. Never reply to Chad — report new messages to Derek only.</div>
+    <div class="summary-bar">
+      <div class="stat-card yellow"><div class="num">2</div><div class="label">Active vendors</div></div>
+      <div class="stat-card orange"><div class="num">1</div><div class="label">Awaiting Derek</div></div>
+    </div>
+    <section>
+      <h2>🏗️ Turkey Run vendors</h2>
+      <table>
+        <thead><tr><th>Vendor</th><th>Role</th><th>Price / PI</th><th>Status</th><th>Last Contact</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="vendor-name">Chad / Sunpal</div><div class="company">Sunpal Power Co., Ltd.</div></td>
+            <td>Primary equipment supplier</td>
+            <td><div class="price">PI: $135,470 total</div><span class="note">$96,239 remaining balance</span></td>
+            <td><span class="badge readonly">🔒 READ-ONLY — Derek manages</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">⚠️ NEVER reply to Chad. PI signed and in progress. Report new messages to Derek only.</td>
+          </tr>
+          <tr>
+            <td><div class="vendor-name">Thomas / MateSolar</div><div class="company">Mate Solar</div></td>
+            <td>Alternative / supplemental supplier</td>
+            <td><div class="price">$708K price email</div><span class="note">received — not yet discussed</span></td>
+            <td><span class="badge awaiting">⏳ Draft reply ready — awaiting Derek</span></td>
+            <td class="date">2026-05-21</td>
+            <td class="note">Thomas sent house email (00:43Z, already READ by Derek). $708K quote email in inbox. Draft reply prepared. All business Qs on HOLD for Derek.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
 
-  <section>
-    <h2>🔴 Dead Ends</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Vendor</th>
-          <th>Reason</th>
-          <th>Last Contact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><div class="vendor-name">Mia Mei</div><div class="company">Nanjing Moge New Energy Co., Ltd.</div></td>
-          <td><span class="badge dead">❌ Cannot export to US</span><br><span class="note" style="margin-top:6px;display:block">Explicitly stated: tariffs (AD/CVD, 201, 301) prevent solar panel exports to USA. Now sells only Staubli MC4 connectors/tools to US.</span></td>
-          <td class="date">2026-05-20</td>
-        </tr>
-        <tr>
-          <td><div class="vendor-name">Emily (Ewen)</div><div class="company">Bluesun Solar Co., Ltd.</div></td>
-          <td><span class="badge runaround">🔄 Runaround</span><br><span class="note" style="margin-top:6px;display:block">Repeatedly says "your email is already registered by another colleague." No pricing ever received despite multiple follow-ups since May 4.</span></td>
-          <td class="date">2026-05-20</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <p class="updated">Last updated: 2026-05-21 · Maintained by CLA (Fantastech purchasing agent) · Target: 1 × 40' HC container, ~560 panels, DDP Goshen IN</p>
+  <p class="updated">Last updated: 2026-05-21 · Maintained by CLA · <a href="https://github.com/derek771/solar-sourcing-tracker" style="color:#4a5568">GitHub</a></p>
 </div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.closest('.tab').classList.add('active');
+}
+</script>
 </body>
 </html>
